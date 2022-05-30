@@ -107,7 +107,8 @@ If you provided a valid url, you'd get a response that looks like this:
 📋 Meta data:
 ================================================================
 ```
-```js
+
+```json
 {
 	"name": "GitHub",
 	"title": "GitHub: Where the world builds software",
