@@ -113,7 +113,8 @@ This package is accessible via http requests and operates on a backend. to make 
 
 ```javascript
 {
-    "data":  {
+    "data":  
+    {
 	    "name":  "YouTube",
 	    "title":  "Rick Astley - Never Gonna Give You Up (Official Music Video)",
 	    "description":  "The official video for “Never Gonna Give You Up” by Rick Astley....",
