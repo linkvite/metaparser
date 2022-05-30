@@ -110,14 +110,14 @@ If you provided a valid url, you'd get a response that looks like this:
 
 ```json
 {
-	"name": "GitHub",
-	"title": "GitHub: Where the world builds software",
-	"description": "GitHub is where over 83 million developers shape the future of software, together. Contribute to the open source community, manage your Git repositories, review code like a pro, track bugs and feat...",
-	"domain": "github.com",
-	"url": "https://github.com/",
-	"type": "object",
-	"images": ["https://github.githubassets.com/images/modules/site/social-cards/github-social.png"],
-	"favicons": ["https://github.githubassets.com/favicons/favicon.svg"]
+  "name": "GitHub",
+  "title": "GitHub: Where the world builds software",
+  "description": "GitHub is where over 83 million developers shape the future of software, together. Contribute to the open source community, manage your Git repositories, review code like a pro, track bugs and feat...",
+  "domain": "github.com",
+  "url": "https://github.com/",
+  "type": "object",
+  "images": ["https://github.githubassets.com/images/modules/site/social-cards/github-social.png"],
+  "favicons": ["https://github.githubassets.com/favicons/favicon.svg"]
 }
 ```
 
