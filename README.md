@@ -2,19 +2,20 @@
 
 <div id="top"></div>
 
-<!-- PROJECT SHIELDS -->
-[![Contributors][contributors-shield]][contributors-url]
-[![Forks][forks-shield]][forks-url]
-[![Stargazers][stars-shield]][stars-url]
-[![Issues][issues-shield]][issues-url]
-[![MIT License][license-shield]][license-url]
-
-
-
 <!-- PROJECT INTRO -->
 <br />
 <div align="center">
   <h1 align="center">Metadata Parser</h1>
+</div>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+![Go](https://img.shields.io/badge/Go-v1.8-blue.svg)
+![Dependencies](https://img.shields.io/badge/dependencies-up%20to%20date-brightgreen.svg)
+[![GitHub Issues](https://img.shields.io/github/issues/LinkviteApp/metadata-parser.svg)](https://github.com/LinkviteApp/metadata-parser/issues)
+![Contributions welcome](https://img.shields.io/badge/contributions-welcome-orange.svg)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+
+<div align="center">
   <p align="center">
     ⚡️ Pull data from web links, including title, description, photos, videos, and more [via OpenGraph]
     <br />
@@ -25,7 +26,7 @@
     ·
     <a href="https://github.com/LinkviteApp/metadata-parser/issues">Request Feature</a>
   </p>
-</div>
+</>
 
 
 
@@ -189,5 +190,3 @@ Feel free to reach out on twitter [@tryLinkvite](https://twitter.com/tryLinkvite
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-<!-- MARKDOWN LINKS & IMAGES -->
-<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
