@@ -28,7 +28,7 @@ func ParseLink() (result MetaData, badRequest error) {
 	start := time.Now()
 	metaData := NewMetaData()
 	log("✅ Valid URL provided.")
-	log("✅ Generated meta data template.")
+	log("✅ Generated metadata template.")
 
 	//fetch the html from the url
 	req, err := http.NewRequest("GET", link, nil)
@@ -69,10 +69,10 @@ func ParseLink() (result MetaData, badRequest error) {
 		return result, nil
 	}
 
-	//update the meta data
-	log("⏳ Updating meta data from html document...")
+	//update the metadata
+	log("⏳ Updating metadata from html document...")
 	metaData.generateMetaData(doc, link, domain)
-	log("✅ Updated meta data from html document.")
+	log("✅ Updated metadata from html document.")
 
 	end := time.Now()
 	elapsed := end.Sub(start)

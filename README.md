@@ -42,7 +42,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About
 
-This package lets you to use Facebook OpenGraph tags to extract information from a website (url / link) and retrieve meta data like title, description, photos, videos, and more.
+This package lets you to use Facebook OpenGraph tags to extract information from a website (url / link) and retrieve metadata like title, description, photos, videos, and more.
 
 
 
@@ -124,15 +124,15 @@ If you provided a valid url, you will get a response that looks like this:
 
 ================================================================
 
-✅ Generated meta data template.
+✅ Generated metadata template.
 
 ================================================================
 
-⏳ Updating meta data from html document...
+⏳ Updating metadata from html document...
 
 ================================================================
 
-✅ Updated meta data from html document.
+✅ Updated metadata from html document.
 
 ================================================================
 
@@ -140,7 +140,7 @@ If you provided a valid url, you will get a response that looks like this:
 
 ================================================================
 
-📋 Meta data:
+📋 Metadata:
 
 ================================================================
 

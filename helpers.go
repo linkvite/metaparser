@@ -26,7 +26,7 @@ func log(msg interface{}) {
 	fmt.Println("================================================================")
 }
 
-//Handle creating a new meta data object if there's an error.
+//Handle creating a new metadata object if there's an error.
 func returnResultWithError(err error, metaData *MetaData, link, domain string) MetaData {
 	logError(err)
 
@@ -51,13 +51,13 @@ func validateLink(link string) (string, error) {
 	u, err := url.Parse(link)
 
 	if err != nil {
-		badRequest := errors.New("Please provide a valid url.")
+		badRequest := errors.New("please provide a valid url")
 		return "", badRequest
 	}
 
 	//if the scheme is not http or https, exit.
 	if u.Scheme != "http" && u.Scheme != "https" {
-		badRequest := errors.New("The url must be a http or https url.")
+		badRequest := errors.New("the url must be of scheme http or https")
 		return "", badRequest
 	}
 
@@ -67,7 +67,7 @@ func validateLink(link string) (string, error) {
 
 	//if the hostname is less than 2, exit
 	if len(hostSplit) < 2 {
-		badRequest := errors.New("Please provide a valid url.")
+		badRequest := errors.New("please provide a valid url")
 		return "", badRequest
 	}
 
@@ -77,7 +77,7 @@ func validateLink(link string) (string, error) {
 	return domain, nil
 }
 
-//Get the base url or a link.
+//Get the base url of a link.
 func getBaseUrl(link string) string {
 	u, err := url.Parse(link)
 
@@ -103,7 +103,7 @@ func resolveUrl(baseUrl, data string) string {
 	return data
 }
 
-//Set value. if the value is empty, then set the default value.
+//If a value is empty, then set it to the default value.
 func setValue(value, fallBack string) string {
 	if value == "" {
 		return fallBack

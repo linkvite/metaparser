@@ -6,7 +6,7 @@ import (
 	"github.com/PuerkitoBio/goquery"
 )
 
-//Instantiate a new meta data object.
+//Instantiate a new metadata object.
 func NewMetaData() *MetaData {
 	return &MetaData{
 		SiteName: "",
@@ -20,7 +20,7 @@ func NewMetaData() *MetaData {
 	}
 }
 
-//Update the default meta data based on the type of tag.
+//Update the default metadata based on the type of tag.
 func (m *MetaData) setValueByType(tag, value, domain string) {
 	switch tag {
 	case "og:site_name":
@@ -29,8 +29,6 @@ func (m *MetaData) setValueByType(tag, value, domain string) {
 	case "og:type":
 		m.SiteType = setValue(value, "website")
 	}
-
-	return
 }
 
 //Set default values based on the link provided.
@@ -40,11 +38,9 @@ func (m *MetaData) setDefaultValue(url, domain, title string) {
 	m.Domain = domain
 	m.SiteName = domain
 	m.SiteType = "website"
-
-	return
 }
 
-//Generate meta data from the page.
+//Generate metadata from the page.
 func (m *MetaData) generateMetaData(doc *goquery.Document, url, domain string) {
 	title, description := getTitleAndDescription(doc)
 
