@@ -175,7 +175,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Feel free to reach out at [@tryLinkvite](https://twitter.com/tryLinkvite) or [@kayode0x](https://twitter.com/kayode0x)  on twitter.
+Feel free to reach out on twitter [@tryLinkvite](https://twitter.com/tryLinkvite) or [@kayode0x](https://twitter.com/kayode0x).
 
 
 
@@ -191,13 +191,3 @@ Feel free to reach out at [@tryLinkvite](https://twitter.com/tryLinkvite) or [@k
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/linkviteApp/metadata-parser.svg?style=for-the-badge
-[contributors-url]: https://github.com/LinkviteApp/metadata-parser/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/linkviteApp/metadata-parser.svg?style=for-the-badge
-[forks-url]: https://github.com/LinkviteApp/metadata-parser/network/members
-[stars-shield]: https://img.shields.io/github/stars/linkviteApp/metadata-parser.svg?style=for-the-badge
-[stars-url]: https://github.com/LinkviteApp/metadata-parser/stargazers
-[issues-shield]: https://img.shields.io/github/issues/linkviteApp/metadata-parser.svg?style=for-the-badge
-[issues-url]: https://github.com/LinkviteApp/metadata-parser/issues/new?labels=enhancement
-[license-shield]: https://img.shields.io/github/license/linkviteApp/metadata-parser.svg?style=for-the-badge
-[license-url]: https://github.com/LinkviteApp/metadata-parser/blob/main/LICENSE.txt
