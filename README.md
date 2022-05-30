@@ -1,24 +1,8 @@
 ----------
 
 <div id="top"></div>
-<!--
-*** Thanks for checking out the Best-README-Template. If you have a suggestion
-*** that would make this better, please fork the repo and create a pull request
-*** or simply open an issue with the tag "enhancement".
-*** Don't forget to give the project a star!
-*** Thanks again! Now go create something AMAZING! :D
--->
-
-
 
 <!-- PROJECT SHIELDS -->
-<!--
-*** I'm using markdown "reference style" links for readability.
-*** Reference links are enclosed in brackets [ ] instead of parentheses ( ).
-*** See the bottom of this document for the declaration of the reference variables
-*** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
-*** https://www.markdownguide.org/basic-syntax/#reference-style-links
--->
 [![Contributors][contributors-shield]][contributors-url]
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
@@ -27,10 +11,10 @@
 
 
 
-<!-- PROJECT LOGO -->
+<!-- PROJECT INTRO -->
 <br />
 <div align="center">
-  <h3 align="center">HTML Metadata Parser</h3>
+  <h3 align="center">Metadata Parser</h3>
   <p align="center">
     ⚡️ Pull data from web links, including title, description, photos, videos, and more [via OpenGraph]
     <br />
@@ -213,6 +197,6 @@ Feel free to reach out at [@tryLinkvite](https://twitter.com/tryLinkvite) or [@k
 [stars-shield]: https://img.shields.io/github/stars/linkviteApp/metadata-parser.svg?style=for-the-badge
 [stars-url]: https://github.com/LinkviteApp/metadata-parser/stargazers
 [issues-shield]: https://img.shields.io/github/issues/linkviteApp/metadata-parser.svg?style=for-the-badge
-[issues-url]: https://github.com/LinkviteApp/metadata-parser/issues
+[issues-url]: https://github.com/LinkviteApp/metadata-parser/issues/new?labels=enhancement
 [license-shield]: https://img.shields.io/github/license/linkviteApp/metadata-parser.svg?style=for-the-badge
 [license-url]: https://github.com/LinkviteApp/metadata-parser/blob/main/LICENSE.txt
