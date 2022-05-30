@@ -12,21 +12,8 @@
 ![Go](https://img.shields.io/badge/Go-v1.8-blue.svg)
 ![Dependencies](https://img.shields.io/badge/dependencies-up%20to%20date-brightgreen.svg)
 [![GitHub Issues](https://img.shields.io/github/issues/LinkviteApp/metadata-parser.svg)](https://github.com/LinkviteApp/metadata-parser/issues)
-![Contributions welcome](https://img.shields.io/badge/contributions-welcome-orange.svg)
+[![Contributions welcome](https://img.shields.io/badge/contributions-welcome-orange.svg)](https://github.com/LinkviteApp/metadata-parser/issues/new?labels=enhancement)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
-
-<div align="center">
-  <p align="center">
-    ⚡️ Pull data from web links, including title, description, photos, videos, and more [via OpenGraph]
-    <br />
-    <br />
-    <a href="https://github.com/LinkviteApp/metadata-parser">View Demo</a>
-    ·
-    <a href="https://github.com/oLinkviteApp/metadata-parser/issues">Report Bug</a>
-    ·
-    <a href="https://github.com/LinkviteApp/metadata-parser/issues">Request Feature</a>
-  </p>
-</div>
 
 
 
