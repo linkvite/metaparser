@@ -26,7 +26,7 @@
     ·
     <a href="https://github.com/LinkviteApp/metadata-parser/issues">Request Feature</a>
   </p>
-</>
+</div>
 
 
 
