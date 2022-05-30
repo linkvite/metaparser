@@ -8,17 +8,23 @@
 
 <h4  align="center">⚡️ Extract data from web links, including title, description, photos, videos, and more [via OpenGraph].</h4>
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-
-![Go](https://img.shields.io/badge/Go-v1.8-blue.svg)
-
-![Dependencies](https://img.shields.io/badge/dependencies-up%20to%20date-brightgreen.svg)
-
-[![GitHub Issues](https://img.shields.io/github/issues/LinkviteApp/metadata-parser.svg)](https://github.com/LinkviteApp/metadata-parser/issues)
-
-[![Contributions welcome](https://img.shields.io/badge/contributions-welcome-orange.svg)](https://github.com/LinkviteApp/metadata-parser/issues/new?labels=enhancement)
-
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+<p align="center">
+    <a href="https://github.com/golang/go">
+    <img src="https://img.shields.io/badge/Go-v1.8-blue.svg"
+         alt="Golang">
+    <a href="https://github.com/LinkviteApp/metadata-parser/issues">
+    <img src="https://img.shields.io/github/issues/LinkviteApp/metadata-parser.svg"
+         alt="GitHub issues">
+    <a href="https://github.com/LinkviteApp/metadata-parser/pulls">
+    <img src="https://img.shields.io/github/issues-pr-raw/LinkviteApp/metadata-parser.svg?&logo=github&logoColor=white"
+         alt="GitHub pull requests">
+    <a href="https://opensource.org/licenses/MIT">
+    <img src="https://img.shields.io/badge/license-MIT-blue.svg"
+         alt="GitHub License">
+    <a href="https://github.com/LinkviteApp/metadata-parser/issues/new?labels=enhancement">
+    <img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=shields"
+        alt="GitHub Contributions">
+</p>
 
 <p  align="center">
     <a  href="#about">About</a> •
