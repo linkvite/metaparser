@@ -14,7 +14,7 @@
 <!-- PROJECT INTRO -->
 <br />
 <div align="center">
-  <h3 align="center">Metadata Parser</h3>
+  <h1 align="center">Metadata Parser</h1>
   <p align="center">
     ⚡️ Pull data from web links, including title, description, photos, videos, and more [via OpenGraph]
     <br />
