@@ -104,7 +104,7 @@ This package is accessible via http requests and operates on a backend. to make 
 ### Body Parameter
  `GET` `http://localhost:8080/api/parse`
  
- ```js
+ ```javascript
 {
 	"link": "https://example.com"
 }
@@ -112,25 +112,22 @@ This package is accessible via http requests and operates on a backend. to make 
 
 ### ✅ Success Response
 
-```js
+```javascript
 {
-    "data":  {
-	    "name":  "YouTube",
-	    "title":  "Rick Astley - Never Gonna Give You Up (Official Music Video)",
-	    "description":  "The official video for “Never Gonna Give You Up” by Rick Astley....",
-	    "domain":  "youtube.com",
-	    "image":  "https://i.ytimg.com/vi/dQw4w9WgXcQ/maxresdefault.jpg",
-	    "url":  "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-	    "type":  "video.other",
-	    "keywords":  ["rick astley, Never Gonna Give You Up, gonna give you up lyrics"]
-	},
-    "timeInMs":  1962
+    "name":  "YouTube",
+    "title":  "Rick Astley - Never Gonna Give You Up (Official Music Video)",
+    "description":  "The official video for “Never Gonna Give You Up” by Rick Astley....",
+    "domain":  "youtube.com",
+    "image":  "https://i.ytimg.com/vi/dQw4w9WgXcQ/maxresdefault.jpg",
+    "url":  "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+    "type":  "video.other",
+    "keywords":  ["rick astley, Never Gonna Give You Up, gonna give you up lyrics"]
 }
 ```
 
 ### ❌ Error Response
 
-```js
+```javascript
 {
     "error":  "Please provide a valid url.",
     "data":  null,
