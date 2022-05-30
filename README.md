@@ -114,9 +114,9 @@ https://github.com
 ```
 
 
-### ✅ Success Response
+### ✅ Successful Response
 
-If you provided a valid url, you'd get a response that looks like this:
+If you provided a valid url, you will get a response that looks like this:
 
 ```sh
 
@@ -183,7 +183,7 @@ github.com
 
 ================================================================
 
-❌ Failed to parse the url. Reason: The url must be a http or https url.
+❌ Failed to parse the url. Reason: The url must be of scheme http or https.
 
 ================================================================
 
@@ -201,6 +201,8 @@ github.com
 - [x] Retrieve favicons
 
 - [x] Retrieve multiple images
+        
+- [ ] Your awesome feature 😉
 
 See the [open issues](https://github.com/LinkviteApp/metadata-parser/issues) for a full list of proposed features (and known issues).
 
@@ -232,9 +234,9 @@ Don't forget to give the project a star! Thanks again!
 
 - 💡 Inspired by [link-preview-js](https://github.com/ospfranco/link-preview-js)
 
-- 🛠 Built on top of [goquery](github.com/PuerkitoBio/goquery)
+- 🛠 Built on top of [goquery](https://github.com/PuerkitoBio/goquery)
 
-- ⚡️ Written in [Go](https://go.dev/).
+- ⚡️ Written in [Go](https://github.com/golang/go)
 
 - 📝 MD Template was from [here](https://github.com/othneildrew/Best-README-Template)
 
