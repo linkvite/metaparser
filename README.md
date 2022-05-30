@@ -28,7 +28,7 @@
 
 <p  align="center">
     <a  href="#about">About</a> •
-    <a  href="#getting-started">Getting Started</a> •
+    <a  href="#installation">Installation</a> •
     <a  href="#usage">Usage</a> •
     <a  href="#roadmap">Roadmap</a> •
     <a  href="#contributing">Contributing</a> •
@@ -37,7 +37,7 @@
     <a  href="#license">License</a>
 </p>
 
----
+
 
 <!-- ABOUT THE PROJECT -->
 ## About
@@ -46,30 +46,13 @@ This package lets you to use Facebook OpenGraph tags to extract information from
 
 
 
-<!-- GETTING STARTED -->
-## Getting Started
+<!-- INSTALLATION -->
+## Installation
 
-1. Clone the repo
-
-```sh
-
-$ git clone https://github.com/linkvite/metadata-parser.git
-
-```
-
-2. Install go mods
 
 ```sh
 
-$ go mod
-
-```
-
-3. Run the server
-
-```sh
-
-$ go run .
+go get -u github.com/LinkviteApp/metadata-parser
 
 ```
 
@@ -78,7 +61,37 @@ $ go run .
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-Once the program is running, you'll get:
+After installing the package, create a go file and paste the example below to get started.
+
+```go
+
+package main
+
+import (
+   "fmt"
+
+   parser "github.com/LinkviteApp/metadata-parser"
+)
+
+func main() {
+   data, err := parser.ParseLink()
+
+   if err != nil {
+      panic(err)
+   }
+
+   fmt.Println(parser.ToJson(data))
+}
+
+```
+        
+In your root directory, run
+
+```sh
+go run .
+```
+        
+Once the program is running, you'll get
 
 ```sh
 
@@ -88,7 +101,7 @@ Once the program is running, you'll get:
 
 ```
 
-Next provide the link you want to parse.
+Next provide the link you want to parse
 
 ```sh
 
