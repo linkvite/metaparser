@@ -1,4 +1,4 @@
-package parser
+package metaParser
 
 type MetaData struct {
 	SiteName string   `json:"name"`
