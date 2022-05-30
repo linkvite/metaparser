@@ -69,14 +69,12 @@
 <!-- ABOUT THE PROJECT -->
 ## About
 
-This package lets you to use Facebook OpenGraph tags to extract information from an HTTP web address and retrieve meta data like title, description, photos, videos, and more. Inspired by [link-preview-js](https://github.com/ospfranco/link-preview-js), and built with [Go](https://go.dev/).
+This package lets you to use Facebook OpenGraph tags to extract information from an HTTP web address and retrieve meta data like title, description, photos, videos, and more. 
 
 
 
 <!-- GETTING STARTED -->
 ## Getting Started
-
-The app runs on a backend, so to get started, clone the repo, install dependencies and run the server to start making http requests.
 
 1. Clone the repo
    ```sh
@@ -96,47 +94,60 @@ The app runs on a backend, so to get started, clone the repo, install dependenci
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-This package is accessible via http requests and operates on a backend. to make requests, either use the query parameter in your browser or the body parameter in a tool like [Postman](https://www.postman.com/).
-
-### Query Parameter
- `GET` `http://localhost:8080/api/parse?link=https://example.com`
-
-### Body Parameter
- `GET` `http://localhost:8080/api/parse`
- 
- ```javascript
-{
-	"link": "https://example.com"
-}
+Once the program is running, you'll get:
+```sh
+👋 Enter the url of the web page 👇
+================================================================
 ```
+Next provide the link you want to parse.
+```sh
+👋 Enter the url of the web page 👇
+================================================================
+https://github.com
+```
+
 
 ### ✅ Success Response
-
-```javascript
+If you provided a valid url, you'd get a response that looks like this:
+```sh
+✅ Valid URL provided.
+================================================================
+✅ Generated meta data template.
+================================================================
+⏳ Updating meta data from html document...
+================================================================
+✅ Updated meta data from html document.
+================================================================
+⏱  Total time taken: 494 milliseconds.
+================================================================
+📋 Meta data:
+================================================================
+```
+```js
 {
-    "name":  "YouTube",
-    "title":  "Rick Astley - Never Gonna Give You Up (Official Music Video)",
-    "description":  "The official video for “Never Gonna Give You Up” by Rick Astley....",
-    "domain":  "youtube.com",
-    "image":  "https://i.ytimg.com/vi/dQw4w9WgXcQ/maxresdefault.jpg",
-    "url":  "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-    "type":  "video.other",
-    "keywords":  ["rick astley, Never Gonna Give You Up, gonna give you up lyrics"]
+	"name": "GitHub",
+	"title": "GitHub: Where the world builds software",
+	"description": "GitHub is where over 83 million developers shape the future of software, together. Contribute to the open source community, manage your Git repositories, review code like a pro, track bugs and feat...",
+	"domain": "github.com",
+	"url": "https://github.com/",
+	"type": "object",
+	"images": ["https://github.githubassets.com/images/modules/site/social-cards/github-social.png"],
+	"favicons": ["https://github.githubassets.com/favicons/favicon.svg"]
 }
 ```
+
 
 ### ❌ Error Response
+**PS** All links must be of scheme `http` or `https`. An error response would look like this:
 
-```javascript
-{
-    "error":  "Please provide a valid url.",
-    "data":  null,
-}
+```sh
+👋 Enter the url of the web page 👇
+================================================================
+github.com
+================================================================
+❌ Failed to parse the url. Reason: The url must be a http or https url.
+================================================================
 ```
-
-
-
-<p align="right">(<a href="#top">back to top</a>)</p>
 
 
 
@@ -145,8 +156,8 @@ This package is accessible via http requests and operates on a backend. to make 
 
 - [x] Parse any website
 - [x] Return custom reponse
-- [ ] Retrieve favicons
-- [ ] Retrieve multiple images & videos
+- [x] Retrieve favicons
+- [x] Retrieve multiple images
 
 See the [open issues](https://github.com/LinkviteApp/metadata-parser/issues) for a full list of proposed features (and known issues).
 
@@ -167,16 +178,12 @@ Don't forget to give the project a star! Thanks again!
 4. Push to the Branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
-<p align="right">(<a href="#top">back to top</a>)</p>
-
 
 
 <!-- LICENSE -->
 ## License
 
 Distributed under the MIT License. See `LICENSE.txt` for more information.
-
-<p align="right">(<a href="#top">back to top</a>)</p>
 
 
 
@@ -185,24 +192,17 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 Feel free to reach out at [@tryLinkvite](https://twitter.com/tryLinkvite) or [@kayode0x](https://twitter.com/kayode0x)  on twitter.
 
-<p align="right">(<a href="#top">back to top</a>)</p>
 
 
-
-<!-- ACKNOWLEDGMENTS -->
+<!-- ACKNOWLEDGE -->
 ## Acknowledgments
-
-This project wouldn't be possible without the following packages.  We appreciate your efforts 🙏
-
-* [goquery](github.com/PuerkitoBio/goquery)
-* [gin](github.com/gin-gonic/gin)
-
++ 💡 Inspired by [link-preview-js](https://github.com/ospfranco/link-preview-js)
++ 🛠 Built on top of [goquery](github.com/PuerkitoBio/goquery)
++ ⚡️ Written in [Go](https://go.dev/).
++ 📝 MD Template was from [here](https://github.com/othneildrew/Best-README-Template)
 
 
-<!-- MISC -->
-## Misc
-
-This README template was from [here](https://github.com/othneildrew/Best-README-Template).
+<p align="right">(<a href="#top">back to top</a>)</p>
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->

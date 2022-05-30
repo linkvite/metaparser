@@ -1,61 +1,37 @@
 package main
 
 import (
+	"errors"
 	"fmt"
-	"strings"
 	"time"
 
 	"net/http"
-	"net/url"
 
 	"github.com/PuerkitoBio/goquery"
-	"github.com/gin-gonic/gin"
 )
 
-func parseLink(c *gin.Context) {
-	link, err := getLink(c)
+func parseLink() (result MetaData, badRequest error) {
+	log("👋 Enter the url of the web page 👇")
 
-	if err != nil {
-		serverError(err.Error(), c)
-		return
-	}
+	//get the link from the user.
+	link := getLink()
 
 	//start the http client.
 	client := &http.Client{}
 
-	//parse the url, also validates the url.
-	u, err := url.Parse(link)
+	//validate the link
+	domain, err := validateLink(link)
 
 	if err != nil {
-		serverError("Please provide a valid url.", c)
-		return
+		return result, err
 	}
 
-	println("The link is: " + link)
-
-	//if the scheme is not http or https, exit.
-	if u.Scheme != "http" && u.Scheme != "https" {
-		serverError("The url must be a http or https url", c)
-		return
-	}
-
-	//split the hostname to get only the domain
-	host := u.Hostname()
-	hostSplit := strings.Split(host, ".")
-
-	//if the hostname is less than 2, exit
-	if len(hostSplit) < 2 {
-		serverError("Please provide a valid url.", c)
-		return
-	}
-
-	metaData := NewMetaData()
-
-	//get the domain
-	domain := hostSplit[len(hostSplit)-2] + "." + hostSplit[len(hostSplit)-1]
-
-	//Record the execution time in milliseconds.
 	start := time.Now()
+	metaData := NewMetaData()
+	log("✅ Valid URL provided.")
+	log("✅ Generated meta data template.")
+
+	//fetch the html from the url
 	req, err := http.NewRequest("GET", link, nil)
 
 	//add the twitterbot header to access many websites.
@@ -65,48 +41,55 @@ func parseLink(c *gin.Context) {
 	client.Timeout = time.Second * 10
 
 	if err != nil {
-		err := err.Error()
-		returnResultWithError(err, metaData, link, domain, start, c)
-		return
+		result := returnResultWithError(err, metaData, link, domain)
+		return result, nil
 	}
 
 	//parse the response
 	resp, err := client.Do(req)
 
 	if err != nil {
-		err := err.Error()
-		returnResultWithError(err, metaData, link, domain, start, c)
-		return
+		result := returnResultWithError(err, metaData, link, domain)
+		return result, nil
 	}
 
 	//close after the request is done.
 	defer resp.Body.Close()
 
 	if resp.StatusCode != 200 {
-		err := fmt.Sprintf("%s", resp.Status)
-		returnResultWithError(err, metaData, link, domain, start, c)
-		return
+		err := errors.New(resp.Status)
+		result := returnResultWithError(err, metaData, link, domain)
+		return result, nil
 	}
 
 	//parse the html document
 	doc, err := goquery.NewDocumentFromReader(resp.Body)
 
 	if err != nil {
-		err := err.Error()
-		returnResultWithError(err, metaData, link, domain, start, c)
-		return
+		result := returnResultWithError(err, metaData, link, domain)
+		return result, nil
 	}
 
-	//update the meta data.
+	//update the meta data
+	log("⏳ Updating meta data from html document...")
 	metaData.generateMetaData(doc, link, domain)
+	log("✅ Updated meta data from html document.")
 
-	returnResult(metaData, start, c)
+	end := time.Now()
+	elapsed := end.Sub(start)
+	log(fmt.Sprintf("⏱  Total time taken: %d milliseconds.", elapsed.Milliseconds()))
 
-	return
+	return *metaData, nil
 }
 
 func main() {
-	router := gin.Default()
-	router.GET("/api/parse", parseLink)
-	router.Run("localhost:8080")
+	data, err := parseLink()
+
+	if err != nil {
+		log("❌ Failed to parse the url. Reason: " + err.Error())
+		return
+	}
+	//print the meta data
+	log("📋 Meta data:")
+	log(toJson(data))
 }

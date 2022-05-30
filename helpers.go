@@ -3,82 +3,111 @@ package main
 import (
 	"encoding/json"
 	"errors"
-	"io/ioutil"
-	"net/http"
-	"time"
-
-	"github.com/gin-gonic/gin"
+	"fmt"
+	"net/url"
+	"strings"
 )
 
-//return a successfully parsed meta data.
-func returnResult(metaData interface{}, start time.Time, c *gin.Context) {
-	end := time.Now()
-	elapsed := end.Sub(start)
-	time := elapsed.Milliseconds()
+//covert struct to json
+func toJson(v interface{}) string {
+	data, _ := json.MarshalIndent(v, "", "\t")
+	return string(data)
+}
 
-	c.JSON(http.StatusOK, gin.H{
-		"data":     metaData,
-		"timeInMs": time,
-	})
+//log error.
+func logError(err error) {
+	log(fmt.Sprintf("❌ Failed to get the url. This is because of: %s", err))
+	log("🤧 Generating blank data.")
+}
 
-	return
+//log a message.
+func log(msg interface{}) {
+	fmt.Printf("%s\n", msg)
+	fmt.Println("================================================================")
 }
 
 //handle creating a new meta data object if there's an error.
-func returnResultWithError(err string, metaData *MetaData, link, domain string, start time.Time, c *gin.Context) {
+func returnResultWithError(err error, metaData *MetaData, link, domain string) MetaData {
+	logError(err)
 
 	//generate a blank data.
 	metaData.setDefaultValue(link, domain, domain)
-	returnResult(metaData, start, c)
-
-	return
+	return *metaData
 }
 
-//return a server error.
-func serverError(errorX string, c *gin.Context) {
-	c.JSON(http.StatusBadRequest, gin.H{
-		"error": errorX,
-		"data":  nil,
-	})
-
-	return
-}
-
-type LinkRequestBody struct {
-	Link string `json:"link"`
-}
-
-//Get the link from query or body parameters.
-func getLink(c *gin.Context) (url string, badRequest error) {
+//get the link from the user.
+func getLink() string {
 	var link string
+	fmt.Scanln(&link)
+	fmt.Println("================================================================")
+	return link
+}
 
-	//check the query string.
-	if c.Query("link") != "" {
-		link = c.Query("link")
+//Validate the link
+//
+//Return the domain name if valid or error if invalid.
+func validateLink(link string) (string, error) {
+	//parse the url, also validates the url.
+	u, err := url.Parse(link)
 
-		return link, nil
+	if err != nil {
+		badRequest := errors.New("Please provide a valid url.")
+		return "", badRequest
 	}
 
-	if c.Request.Body != nil {
-
-		//check the request body
-		var requestBody LinkRequestBody
-
-		body := c.Request.Body
-		x, _ := ioutil.ReadAll(body)
-
-		err := json.Unmarshal(x, &requestBody)
-
-		if err != nil {
-			badRequest = errors.New("Please provide a valid url.")
-			return
-		}
-
-		link = requestBody.Link
-
-		return link, nil
+	//if the scheme is not http or https, exit.
+	if u.Scheme != "http" && u.Scheme != "https" {
+		badRequest := errors.New("The url must be a http or https url.")
+		return "", badRequest
 	}
 
-	badRequest = errors.New("Please provide a valid url.")
-	return
+	//split the hostname to get only the domain
+	host := u.Hostname()
+	hostSplit := strings.Split(host, ".")
+
+	//if the hostname is less than 2, exit
+	if len(hostSplit) < 2 {
+		badRequest := errors.New("Please provide a valid url.")
+		return "", badRequest
+	}
+
+	//get the domain
+	domain := hostSplit[len(hostSplit)-2] + "." + hostSplit[len(hostSplit)-1]
+
+	return domain, nil
+}
+
+//get the base url or a link.
+func getBaseUrl(link string) string {
+	u, err := url.Parse(link)
+
+	if err != nil {
+		panic(err)
+	}
+
+	baseURL := u.Scheme + "://" + u.Host
+	return baseURL
+}
+
+//resolve urls by adding the root url to the passed string if necessary.
+func resolveUrl(baseUrl, data string) string {
+	if data == "" {
+		return ""
+	}
+
+	//if the url is relative, then add the baseURL to it.
+	if strings.HasPrefix(data, "/") {
+		return baseUrl + data
+	}
+
+	return data
+}
+
+//set value. if the value is empty, then set the default value.
+func setValue(value, fallBack string) string {
+	if value == "" {
+		return fallBack
+	}
+
+	return value
 }
