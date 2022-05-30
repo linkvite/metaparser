@@ -113,17 +113,17 @@ This package is accessible via http requests and operates on a backend. to make 
 
 ```javascript
 {
-"data":  {
-	"name":  "YouTube",
-	"title":  "Rick Astley - Never Gonna Give You Up (Official Music Video)",
-	"description":  "The official video for “Never Gonna Give You Up” by Rick AstleyTaken from the album ‘Whenever You Need Somebody’ – deluxe 2CD and digital deluxe out 6th May ...",
-	"domain":  "youtube.com",
-	"image":  "https://i.ytimg.com/vi/dQw4w9WgXcQ/maxresdefault.jpg",
-	"url":  "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-	"type":  "video.other",
-	"keywords":  ["rick astley, Never Gonna Give You Up, nggyu, never gonna give you up lyrics, rick rolled, the boys soundtrack, the boys amazon prime, Never gonna give you up the boys, official, Rick Roll, music video, Rick Astley album, rick astley official, together forever, Whenever You Need Somebody, rickrolled, WRECK-IT RALPH 2, Fortnite song, Fortnite event, Fortnite dance, fortnite never gonna give you up, rick astley never gonna give you up, rick astley never gonna give you up lyrics"]
+    "data":  {
+	    "name":  "YouTube",
+	    "title":  "Rick Astley - Never Gonna Give You Up (Official Music Video)",
+	    "description":  "The official video for “Never Gonna Give You Up” by Rick Astley....",
+	    "domain":  "youtube.com",
+	    "image":  "https://i.ytimg.com/vi/dQw4w9WgXcQ/maxresdefault.jpg",
+	    "url":  "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+	    "type":  "video.other",
+	    "keywords":  ["rick astley, Never Gonna Give You Up, gonna give you up lyrics"]
 	},
-"timeInMs":  1962
+    "timeInMs":  1962
 }
 ```
 
@@ -131,8 +131,8 @@ This package is accessible via http requests and operates on a backend. to make 
 
 ```javascript
 {
-"error":  "Please provide a valid url.",
-"data":  null,
+    "error":  "Please provide a valid url.",
+    "data":  null,
 }
 ```
 
