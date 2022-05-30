@@ -103,18 +103,16 @@ This package is accessible via http requests and operates on a backend. to make 
 
 ### Body Parameter
  `GET` `http://localhost:8080/api/parse`
- ```js
-{
+ 
+ ```js{
 	"link": "https://example.com"
 }
 ```
 
 ### ✅ Success Response
 
-```javascript
-{
-    "data":  
-    {
+```js{
+    "data":  {
 	    "name":  "YouTube",
 	    "title":  "Rick Astley - Never Gonna Give You Up (Official Music Video)",
 	    "description":  "The official video for “Never Gonna Give You Up” by Rick Astley....",
@@ -130,8 +128,7 @@ This package is accessible via http requests and operates on a backend. to make 
 
 ### ❌ Error Response
 
-```javascript
-{
+```js{
     "error":  "Please provide a valid url.",
     "data":  null,
 }
