@@ -5,7 +5,7 @@ import (
 	"fmt"
 )
 
-// Covert struct to json.
+// Covert struct to JSON.
 func ToJSON(v interface{}) string {
 	data, err := json.MarshalIndent(v, "", "\t")
 
