@@ -1,4 +1,4 @@
-module github.com/LinkviteApp/metadata-parser
+module github.com/LinkviteApp/metaparser
 
 go 1.18
 

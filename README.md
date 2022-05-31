@@ -2,11 +2,11 @@
 
 <!-- PROJECT INTRO -->
 <br />
-<div  align="center">
+<div align="center">
 <h1  align="center">Metadata Parser</h1>
 </div>
 
-<h4  align="center">⚡️ Extract data from web links, including title, description, photos, videos, and more [via OpenGraph].</h4>
+<h4 align="center">⚡️ Extract data from web links, including title, description, photos, videos, and more [via OpenGraph].</h4>
 
 <p align="center">
     <a href="https://github.com/golang/go">
@@ -68,19 +68,29 @@ After installing the package, create a go file and paste the example below to ge
 package main
 
 import (
-   "fmt"
+    "fmt"
 
-   parser "github.com/LinkviteApp/metadata-parser"
+    parser "github.com/LinkviteApp/metadata-parser"
 )
 
 func main() {
-   data, err := parser.ParseLink()
+    var link string
 
-   if err != nil {
-      panic(err)
-   }
+    //You can provide your own link.
+    link = "https://www.facebook.com/LinkviteApp"
 
-   fmt.Println(parser.ToJson(data))
+    //optional: Or use GetLink(). This runs on the terminal.
+    link = parser.GetLink()
+
+    data, err := parser.ParseLink(link)
+
+    if err != nil {
+        panic(err)
+    }
+
+    //optional: Convert the parsed data to JSON
+    result := parser.ToJSON(data)
+    fmt.Println(result)
 }
 
 ```
@@ -148,23 +158,21 @@ If you provided a valid url, you will get a response that looks like this:
 
 ```json
 {
-  "name": "GitHub",
+    "name": "GitHub",
 
-  "title": "GitHub: Where the world builds software",
+    "title": "GitHub: Where the world builds software",
 
-  "description": "GitHub is where over 83 million developers shape the future of software, together. Contribute to the open source community, manage your Git repositories, review code like a pro, track bugs and feat...",
+    "description": "GitHub is where over 83 million developers shape the future of software, together. Contribute to the open source community, manage your Git repositories, review code like a pro, track bugs and feat...",
 
-  "domain": "github.com",
+    "domain": "github.com",
 
-  "url": "https://github.com/",
+    "url": "https://github.com/",
 
-  "type": "object",
+    "type": "object",
 
-  "images": [
-    "https://github.githubassets.com/images/modules/site/social-cards/github-social.png"
-  ],
+    "images": ["https://github.githubassets.com/images/modules/site/social-cards/github-social.png"],
 
-  "favicons": ["https://github.githubassets.com/favicons/favicon.svg"]
+    "favicons": ["https://github.githubassets.com/favicons/favicon.svg"]
 }
 ```
 
