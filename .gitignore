@@ -15,4 +15,6 @@
 vendor/
 
 #VsCode
-.vscode/
+.vscode
+
+.golangci.yaml
