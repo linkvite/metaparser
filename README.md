@@ -168,7 +168,7 @@ If you provided a valid url, you will get a response that looks like this:
 
     "url": "https://github.com/",
 
-    "type": "object",
+    "type": "website",
 
     "images": ["https://github.githubassets.com/images/modules/site/social-cards/github-social.png"],
 
