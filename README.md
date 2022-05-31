@@ -12,16 +12,16 @@
     <a href="https://github.com/golang/go">
     <img src="https://img.shields.io/badge/Go-v1.8-blue.svg"
          alt="Golang">
-    <a href="https://github.com/LinkviteApp/metadata-parser/issues">
-    <img src="https://img.shields.io/github/issues/LinkviteApp/metadata-parser.svg"
+    <a href="https://github.com/LinkviteApp/metaparser/issues">
+    <img src="https://img.shields.io/github/issues/LinkviteApp/metaparser.svg"
          alt="GitHub issues">
-    <a href="https://github.com/LinkviteApp/metadata-parser/pulls">
-    <img src="https://img.shields.io/github/issues-pr-raw/LinkviteApp/metadata-parser.svg?&logo=github&logoColor=white"
+    <a href="https://github.com/LinkviteApp/metaparser/pulls">
+    <img src="https://img.shields.io/github/issues-pr-raw/LinkviteApp/metaparser.svg?&logo=github&logoColor=white"
          alt="GitHub pull requests">
     <a href="https://opensource.org/licenses/MIT">
     <img src="https://img.shields.io/badge/license-MIT-blue.svg"
          alt="GitHub License">
-    <a href="https://github.com/LinkviteApp/metadata-parser/issues/new?labels=enhancement">
+    <a href="https://github.com/LinkviteApp/metaparser/issues/new?labels=enhancement">
     <img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=shields"
         alt="GitHub Contributions">
 </p>
@@ -52,7 +52,7 @@ This package lets you to use Facebook OpenGraph tags to extract information from
 
 ```sh
 
-go get -u github.com/LinkviteApp/metadata-parser
+go get -u github.com/LinkviteApp/metaparser
 
 ```
 
@@ -70,7 +70,7 @@ package main
 import (
     "fmt"
 
-    parser "github.com/LinkviteApp/metadata-parser"
+    parser "github.com/LinkviteApp/metaparser"
 )
 
 func main() {
@@ -212,7 +212,7 @@ github.com
         
 - [ ] Your awesome feature 😉
 
-See the [open issues](https://github.com/LinkviteApp/metadata-parser/issues) for a full list of proposed features (and known issues).
+See the [open issues](https://github.com/LinkviteApp/metaparser/issues) for a full list of proposed features (and known issues).
 
 
 
