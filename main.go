@@ -1,6 +1,7 @@
 package parser
 
 import (
+	"errors"
 	"fmt"
 	"net/http"
 	"time"
@@ -9,19 +10,30 @@ import (
 )
 
 // Return the metadata of the page or error.
-func ParseLink(link string) (MetaData, error) {
-	// Start the http client.
-	client := &http.Client{}
+func ParseLink(p Parameters) (MetaData, error) {
+	// Get and Set the default parameters.
+	p = setDefaultParameters(p)
 
-	// Validate the link.
-	domain, err := ValidateLink(link)
+	// Start the http client.
+	client := &http.Client{
+		Timeout: time.Second * time.Duration(p.Timeout),
+		CheckRedirect: func(req *http.Request, via []*http.Request) error {
+			if p.AllowRedirect {
+				return nil
+			}
+			return errors.New("redirect not allowed. Pass `AllowRedirect: true` if you want to allow redirects")
+		},
+	}
+
+	// Validate the URL.
+	domain, err := ValidateLink(p.URL)
 
 	if err != nil {
 		panic(err)
 	}
 
 	// Set the URL and domain to parse.
-	linkData := NewLink(link, domain)
+	linkData := NewLink(p.URL, domain)
 
 	start := time.Now()
 	metaData := NewMetaData()
@@ -30,14 +42,12 @@ func ParseLink(link string) (MetaData, error) {
 	log("✅ Generated metadata template.")
 
 	// Fetch the html from the url.
-	req, err := http.NewRequest("GET", link, http.NoBody)
+	req, err := http.NewRequest("GET", p.URL, http.NoBody)
 
-	// Add the twitterbot header to access many websites.
-	req.Header.Set("User-Agent", "Twitterbot/1.0")
-
-	// Timeout after 10 seconds.
-	const secondsTimeout = 10
-	client.Timeout = time.Second * secondsTimeout
+	// Add the headers.
+	for k, v := range p.Headers {
+		req.Header.Set(k, v)
+	}
 
 	if err != nil {
 		result := returnResultWithError(err.Error(), metaData, linkData)

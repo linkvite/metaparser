@@ -21,6 +21,11 @@ func GetLink() string {
 //
 // Return the domain name if valid or error if invalid.
 func ValidateLink(link string) (l string, e error) {
+	// Check if the link is present.
+	if link == "" {
+		return "", PrintError("link is empty")
+	}
+
 	// Parse the url, also validates the url.
 	u, err := url.Parse(link)
 

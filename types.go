@@ -16,6 +16,13 @@ type Link struct {
 	Domain string
 }
 
+type Parameters struct {
+	URL           string
+	Timeout       int
+	AllowRedirect bool
+	Headers       map[string]string
+}
+
 // Instantiate a new metadata object.
 func NewMetaData() *MetaData {
 	return &MetaData{
