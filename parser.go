@@ -77,7 +77,7 @@ func getFavicons(doc *goquery.Document, link string) []string {
 			})
 	}
 
-	return favicons
+	return removeDuplicates(favicons)
 }
 
 // Get a meta tag content by property name.
@@ -143,5 +143,5 @@ func getImages(doc *goquery.Document, link string) []string {
 		}
 	}
 
-	return images
+	return removeDuplicates(images)
 }

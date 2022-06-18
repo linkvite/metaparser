@@ -76,13 +76,27 @@ import (
 func main() {
     var link string
 
-    //You can provide your own link.
-    link = "https://www.facebook.com/LinkviteApp"
+    // You can provide your own link.
+    link = "https://www.twitter.com/tryLinkvite"
 
-    //optional: Or use GetLink(). This runs on the terminal.
+    // Optional: Or use GetLink(). This runs on the terminal.
     link = parser.GetLink()
 
-    data, err := parser.ParseLink(link)
+    // Optional: Pass custom headers parameters.
+    // See the table below for the available parameters.
+    headers := make(map[string]string)
+	headers["Accept-Language"] = "en-US"
+	headers["User-Agent"] = "googlebot"
+
+    // Pass the required URL and optional parameters.
+    options := parser.Parameters{
+		URL:           link,
+		Timeout:       10,
+		AllowRedirect: false,
+		Headers:       headers,
+	}
+
+    data, err := parser.ParseLink(options)
 
     if err != nil {
         panic(err)
@@ -94,6 +108,17 @@ func main() {
 }
 
 ```
+
+### Options
+
+Aside the required URL, you can pass optional parameters which should add more functionality in the parsing of the provided link.
+
+| Property Name                                                                          |                                                                             Result                                                                              |
+| -------------------------------------------------------------------------------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------: |
+| URL (**required**)                                           |                                 The URL to parse. (Must start with http or https)                                 |
+| Headers (**optional**) (ex: { 'user-agent': 'googlebot', 'Accept-Language': 'en-US' }) |                                                                Add request headers to fetch call                                                                |
+| Timeout (**optional**) (ex: 1000) (default 10)                                                     |                                                                 Timeout for the request to fail                                                                 |
+| AllowRedirect (**optional**) (default false)                                         | For security reasons, the library does not automatically follow redirects, a malicious agent can exploit redirects to steal data, turn this on at your own risk |
         
 In your root directory, run
 
